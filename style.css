@@ -1,0 +1,158 @@
+html {
+  scroll-behavior: smooth;
+  padding: 0;
+}
+
+body,
+main {
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+  width: 100%;
+  min-width: 350px;
+}
+
+h1 {
+  margin: 0;
+  font-size: 1.8rem;
+}
+h2 {
+  font-size: 1.8rem;
+  padding: 1rem 0;
+  color: white;
+}
+
+footer i {
+  font-size: 3rem;
+}
+h1,
+h2,
+h3 {
+  text-align: center;
+}
+
+nav {
+  background-color: black;
+  height: 3rem;
+  display: flex;
+  justify-content: flex-end;
+}
+nav div {
+  display: flex;
+  justify-content: center;
+}
+nav a {
+  text-decoration: none;
+  color: white;
+  align-self: center;
+  padding: 0 1rem;
+}
+
+nav div:hover {
+  background-color: grey;
+}
+
+@media (min-width: 600px) {
+  #main-header {
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 0;
+  }
+  #projects,
+  #footer {
+    padding-top: 3rem;
+  }
+}
+
+#welcome-section {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#projects {
+  background: rgb(34, 34, 34);
+  z-index: -2;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  grid-gap: 1rem;
+  z-index: -1;
+}
+@media (min-width: 900px) {
+  #projects {
+    padding: 3rem 2rem;
+    grid-gap: 3rem;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    grid-template-areas: "header header";
+  }
+  .grid-header {
+    grid-area: header;
+  }
+}
+@media (min-width: 1400px) {
+  #projects {
+    grid-template-columns: repeat(3, 1fr);
+
+    grid-template-areas: "header header header";
+  }
+  .grid-header {
+    grid-area: header;
+  }
+}
+
+.project-tile {
+  margin: 0 1rem;
+  background: white;
+  box-shadow: 0 2rem 4rem 0 rgba(0, 0, 0, 0.7);
+}
+.project-tile h3 {
+  margin: 0.5rem;
+}
+img {
+  width: 100%;
+}
+
+.tile-title {
+  text-decoration: none;
+}
+
+footer {
+  height: 100vh;
+  background: rgb(24, 24, 24);
+  color: white;
+  padding: 1rem 1rem;
+}
+footer h3 {
+  font-size: 1.2rem;
+  margin: 0 1rem;
+  align-self: center;
+}
+footer ul {
+  list-style: none;
+  border: white solid;
+  border-width: 3px;
+  padding-left: 0;
+  margin: 0;
+}
+footer a {
+  color: white;
+  text-decoration: none;
+}
+footer li {
+  padding: 0.4rem;
+}
+footer li:hover {
+  background: rgba(161, 161, 161, 0.747);
+}
+footer i {
+  width: 4rem;
+}
+footer a {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+}
