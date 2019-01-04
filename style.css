@@ -1,19 +1,41 @@
 html {
   scroll-behavior: smooth;
   padding: 0;
+
+  background: url("https://source.unsplash.com/t922kt5UsU4/800x600") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
+/* -------------------------------------- */
+/* -------- CSS GLOBAL VARIABLES ---------*/
+/* -------------------------------------- */
+
+:root {
+  --main-charcoal: #333a3b;
+  --main-tan: #665745;
+  --main-pink: #b29189;
+  --main-gold: #af7927;
+  --main-brown: #663204;
+  --main-font: "Roboto", sans-serif;
+  --nav-hover: var(--main-gold);
+  --nav-background: var(--main-charcoal);
+  --nav-active-tab: var(--nav-hover);
+}
 body,
 main {
-  font-family: "Roboto", sans-serif;
+  font-family: var(--main-font);
   margin: 0;
-  width: 100%;
+
   min-width: 350px;
 }
 
 h1 {
   margin: 0;
   font-size: 1.8rem;
+  color: white;
 }
 h2 {
   font-size: 1.8rem;
@@ -30,12 +52,18 @@ h3 {
   text-align: center;
 }
 
+/* -------------------------------------- */
+/* -------------- NAVBAR -----------------*/
+/* -------------------------------------- */
+
 nav {
-  background-color: black;
+  background-color: var(--nav-background);
   height: 3rem;
   display: flex;
   justify-content: flex-end;
+  transition: 0.3s;
 }
+
 nav div {
   display: flex;
   justify-content: center;
@@ -46,9 +74,11 @@ nav a {
   align-self: center;
   padding: 0 1rem;
 }
-
 nav div:hover {
-  background-color: grey;
+  background-color: var(--nav-hover);
+}
+.nav-box {
+  transition: 0.3s;
 }
 
 @media (min-width: 600px) {
@@ -62,6 +92,13 @@ nav div:hover {
     padding-top: 3rem;
   }
 }
+.knockout {
+  background: var(--main-charcoal);
+}
+
+/* -------------------------------------- */
+/* -------------- LANDING ----------------*/
+/* -------------------------------------- */
 
 #welcome-section {
   height: 100vh;
@@ -69,9 +106,18 @@ nav div:hover {
   justify-content: center;
   align-items: center;
 }
+#welcome-section header {
+  background: rgba(51, 58, 59, 0.6);
+  padding: 2rem;
+  z-index: -1;
+}
+
+/* -------------------------------------- */
+/* -------------- PROJECTS ---------------*/
+/* -------------------------------------- */
 
 #projects {
-  background: rgb(34, 34, 34);
+  background: var(--main-charcoal);
   z-index: -2;
 
   display: grid;
@@ -81,6 +127,9 @@ nav div:hover {
   z-index: -1;
 }
 @media (min-width: 900px) {
+  h1 {
+    font-size: 3rem;
+  }
   #projects {
     padding: 3rem 2rem;
     grid-gap: 3rem;
@@ -92,11 +141,14 @@ nav div:hover {
   .grid-header {
     grid-area: header;
   }
+  .project-tile h3 {
+    padding: 0.8rem 0;
+  }
 }
 @media (min-width: 1400px) {
   #projects {
     grid-template-columns: repeat(3, 1fr);
-
+    grid-auto-rows: minmax(0, 1fr);
     grid-template-areas: "header header header";
   }
   .grid-header {
@@ -104,27 +156,86 @@ nav div:hover {
   }
 }
 
+/* ------------- TILES -------------- */
 .project-tile {
-  margin: 0 1rem;
-  background: white;
-  box-shadow: 0 2rem 4rem 0 rgba(0, 0, 0, 0.7);
+  background: rgb(230, 178, 8);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  position: relative;
 }
 .project-tile h3 {
   margin: 0.5rem;
 }
+.tile-caption {
+  display: flex;
+  flex-direction: column;
+}
 img {
   width: 100%;
+  transition: opacity 1s ease;
 }
 
-.tile-title {
-  text-decoration: none;
+img:hover + .img-btn,
+.img-btn:hover {
+  opacity: 1;
 }
 
+.img-btn {
+  position: absolute;
+  top: 40%;
+  padding: 1rem;
+  left: 40%;
+  opacity: 0;
+}
+.project-tile:hover {
+  box-shadow: 0 16px 48px 0 rgba(0, 0, 0, 0.2);
+}
+.btn {
+  font: var(--main-font);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  border: none;
+  transition: 0.3s;
+}
+
+.btn:focus {
+  outline: none;
+}
+.expand-btn {
+  background-color: var(--main-brown);
+}
+.expand-btn {
+  align-self: center;
+  background-color: var(--main-charcoal);
+  color: white;
+  border-radius: 1rem;
+
+  width: 8rem;
+
+  margin: 0 0 1rem 0;
+}
+
+/* ------------- POPUP -------------- */
+.tile-description {
+  transition: all 0.5s ease;
+  margin: 0;
+  padding: 0 1rem 0 1rem;
+  opacity: 0;
+  height: auto;
+  max-height: 0;
+  overflow: hidden;
+}
+
+/* -------------------------------------- */
+/* -------------- FOOTER -----------------*/
+/* -------------------------------------- */
 footer {
   height: 100vh;
-  background: rgb(24, 24, 24);
+  background: var(--main-charcoal);
   color: white;
   padding: 1rem 1rem;
+}
+footer h2 {
+  color: var(--main-pink);
 }
 footer h3 {
   font-size: 1.2rem;
@@ -133,20 +244,21 @@ footer h3 {
 }
 footer ul {
   list-style: none;
-  border: white solid;
+  border: var(--main-pink) solid;
   border-width: 3px;
   padding-left: 0;
   margin: 0;
 }
 footer a {
-  color: white;
+  color: var(--main-pink);
   text-decoration: none;
 }
+
 footer li {
   padding: 0.4rem;
 }
 footer li:hover {
-  background: rgba(161, 161, 161, 0.747);
+  background: var(--main-tan);
 }
 footer i {
   width: 4rem;

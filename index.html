@@ -18,54 +18,121 @@
     <main id="main">
       <header id="main-header">
         <nav id="navbar">
-          <div><a href="#welcome-section">About</a></div>
-          <div><a href="#projects">Works</a></div>
-          <div><a href="#footer">Contact</a></div>
+          <div id="about" class="nav-box pink-background"><a class="navlink" href="#welcome-section">About</a></div>
+          <div id="works" class="nav-box pink-background"><a class="navlink" href="#projects">Works</a></div>
+          <div id="contact" class="nav-box pink-background"><a class="navlink" href="#footer">Contact</a></div>
         </nav>
       </header>
 
       <section id="welcome-section">
-        <header>
+        <header class="knockout">
           <h1>Hi, my name is Andy.<br />I'm a frontend developer</h1>
         </header>
       </section>
 
       <section id="projects">
         <header class="grid-header"><h2>Check out some of my recent works...</h2></header>
-        <article class="project-tile tile-1">
-          <a href="https://codepen.io/awebster/pen/QzqNRb" target="_blank">
-            <img
-              src="https://s3-us-west-2.amazonaws.com/i.cdpn.io/1720503.QzqNRb.small.97c3c078-e2d2-4525-a823-0ce6f446567c.png"
-            />
-          </a>
-          <h3>Technical documentation page</h3>
-        </article>
 
-        <article class="project-tile tile-2">
-          <a href="https://codepen.io/awebster/pen/rozdQZ" target="_blank">
-            <img
-              src="https://s3-us-west-2.amazonaws.com/i.cdpn.io/1720503.rozdQZ.small.1a149d6e-3175-426a-a2b3-a6f98cc035fd.png"
-            />
-          </a>
-          <h3>Product landing page</h3>
-        </article>
+        <div>
+          <article class="project-tile tile-1">
+            <a href="https://codepen.io/awebster/pen/QzqNRb" target="_blank">
+              <img
+                src="https://s3-us-west-2.amazonaws.com/i.cdpn.io/1720503.QzqNRb.small.97c3c078-e2d2-4525-a823-0ce6f446567c.png"
+              />
+              <button class="btn img-btn">See the code in action</button>
+            </a>
+            <div class="tile-caption">
+              <h3>Technical documentation page</h3>
+              <p id="tile-desc-1" class="tile-description">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto perferendis maiores cum aliquam
+                repudiandae autem totam sapiente dignissimos ullam, placeat iure, cupiditate consectetur suscipit facere
+                eius voluptates voluptatibus aliquid qui commodi id quas molestiae dolores. Beatae natus aut earum
+                delectus?
+              </p>
+              <button class="btn expand-btn" onclick="openPopup('tile-desc-1')">Read more</button>
+            </div>
+          </article>
+        </div>
 
-        <article class="project-tile tile-3">
-          <a href="https://codepen.io/awebster/pen/bORJZO" target="_blank">
-            <img
-              src="https://s3-us-west-2.amazonaws.com/i.cdpn.io/1720503.bORJZO.small.0c4d6e5c-86a4-4def-9f97-ed09361cc713.png"
-            />
-          </a>
-          <h3>Survey form</h3>
-        </article>
-        <article class="project-tile tile-4">
-          <a href="https://codepen.io/awebster/pen/dwRLGM" target="_blank">
-            <img
-              src="https://s3-us-west-2.amazonaws.com/i.cdpn.io/1720503.dwRLGM.small.8616fd7e-6cd0-4847-8729-66f82d975dbc.png"
-            />
-          </a>
-          <h3>Tribute page</h3>
-        </article>
+        <div>
+          <article class="project-tile tile-2">
+            <a href="https://codepen.io/awebster/pen/rozdQZ" target="_blank">
+              <img
+                src="https://s3-us-west-2.amazonaws.com/i.cdpn.io/1720503.rozdQZ.small.1a149d6e-3175-426a-a2b3-a6f98cc035fd.png"
+              />
+            </a>
+            <div class="tile-caption">
+              <h3>Product landing page</h3>
+              <p id="tile-desc-2" class="tile-description">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto perferendis maiores cum aliquam
+                repudiandae autem totam sapiente dignissimos ullam, placeat iure, cupiditate consectetur suscipit facere
+                eius voluptates voluptatibus aliquid qui commodi id quas molestiae dolores. Beatae natus aut earum
+                delectus?
+              </p>
+              <button class="btn expand-btn" onclick="openPopup('tile-desc-2')">Read more</button>
+            </div>
+          </article>
+        </div>
+
+        <div>
+          <article class="project-tile tile-3">
+            <a href="https://codepen.io/awebster/pen/bORJZO" target="_blank">
+              <img
+                src="https://s3-us-west-2.amazonaws.com/i.cdpn.io/1720503.bORJZO.small.0c4d6e5c-86a4-4def-9f97-ed09361cc713.png"
+              />
+            </a>
+            <div class="tile-caption">
+              <h3>Survey form</h3>
+              <p id="tile-desc-3" class="tile-description">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto perferendis maiores cum aliquam
+                repudiandae autem totam sapiente dignissimos ullam, placeat iure, cupiditate consectetur suscipit facere
+                eius voluptates voluptatibus aliquid qui commodi id quas molestiae dolores. Beatae natus aut earum
+                delectus?
+              </p>
+              <button class="btn expand-btn" onclick="openPopup('tile-desc-3')">Read more</button>
+            </div>
+          </article>
+        </div>
+
+        <div>
+          <article class="project-tile tile-4">
+            <a href="https://codepen.io/awebster/pen/bOYYEP" target="_blank">
+              <img
+                src="https://s3-us-west-2.amazonaws.com/i.cdpn.io/1720503.bOYYEP.small.807c2d20-faf2-402d-aa89-c246e8630648.png"
+              />
+            </a>
+
+            <div class="tile-caption">
+              <h3>Parallax experiment</h3>
+              <p id="tile-desc-4" class="tile-description">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto perferendis maiores cum aliquam
+                repudiandae autem totam sapiente dignissimos ullam, placeat iure, cupiditate consectetur suscipit facere
+                eius voluptates voluptatibus aliquid qui commodi id quas molestiae dolores. Beatae natus aut earum
+                delectus?
+              </p>
+              <button class="btn expand-btn" onclick="openPopup('tile-desc-4')">Read more</button>
+            </div>
+          </article>
+        </div>
+
+        <div>
+          <article class="project-tile tile-5">
+            <a href="http://morple-photography.firebaseapp.com" target="_blank">
+              <img src="./assets/photography.png" />
+            </a>
+
+            <div class="tile-caption">
+              <h3>Photography Portfolio</h3>
+              <p id="tile-desc-5" class="tile-description">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto perferendis maiores cum aliquam
+                repudiandae autem totam sapiente dignissimos ullam, placeat iure, cupiditate consectetur suscipit facere
+                eius voluptates voluptatibus aliquid qui commodi id quas molestiae dolores. Beatae natus aut earum
+                delectus?
+              </p>
+              <button class="btn expand-btn" onclick="openPopup('tile-desc-5')">Read more</button>
+            </div>
+          </article>
+        </div>
       </section>
 
       <footer id="footer">
@@ -92,5 +159,6 @@
         </ul>
       </footer>
     </main>
+    <script src="./script.js"></script>
   </body>
 </html>
