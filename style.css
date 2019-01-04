@@ -31,7 +31,9 @@ main {
 
   min-width: 350px;
 }
-
+hr {
+  opacity: 0;
+}
 h1 {
   margin: 0;
   font-size: 1.8rem;
@@ -85,15 +87,13 @@ nav div:hover {
   #main-header {
     position: -webkit-sticky; /* Safari */
     position: sticky;
+    z-index: 1;
     top: 0;
   }
   #projects,
   #footer {
     padding-top: 3rem;
   }
-}
-.knockout {
-  background: var(--main-charcoal);
 }
 
 /* -------------------------------------- */
@@ -124,7 +124,6 @@ nav div:hover {
   grid-template-columns: 1fr;
   grid-template-rows: auto;
   grid-gap: 1rem;
-  z-index: -1;
 }
 @media (min-width: 900px) {
   h1 {
@@ -161,10 +160,14 @@ nav div:hover {
   background: rgb(230, 178, 8);
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   transition: 0.3s;
-  position: relative;
+  margin: 0.5rem;
+  z-index: 0;
 }
 .project-tile h3 {
   margin: 0.5rem;
+}
+.img-container {
+  position: relative;
 }
 .tile-caption {
   display: flex;
@@ -175,17 +178,22 @@ img {
   transition: opacity 1s ease;
 }
 
-img:hover + .img-btn,
-.img-btn:hover {
+a:hover + .img-txt,
+.img-txt:hover {
   opacity: 1;
 }
 
-.img-btn {
+.img-txt {
   position: absolute;
-  top: 40%;
+  top: 30%;
   padding: 1rem;
-  left: 40%;
+  left: 30%;
+  align-self: auto;
+  background: rgba(51, 58, 59, 0.6);
+  color: #fff;
   opacity: 0;
+  transition: opacity 0.5s ease-out;
+  pointer-events: none;
 }
 .project-tile:hover {
   box-shadow: 0 16px 48px 0 rgba(0, 0, 0, 0.2);
@@ -194,14 +202,16 @@ img:hover + .img-btn,
   font: var(--main-font);
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   border: none;
-  transition: 0.3s;
+  transition: all 0.3s;
 }
 
 .btn:focus {
   outline: none;
 }
-.expand-btn {
-  background-color: var(--main-brown);
+.expand-btn:hover {
+  width: 9rem;
+
+  box-shadow: 0 16px 48px 0 rgba(0, 0, 0, 0.2);
 }
 .expand-btn {
   align-self: center;
@@ -230,9 +240,16 @@ img:hover + .img-btn,
 /* -------------------------------------- */
 footer {
   height: 100vh;
-  background: var(--main-charcoal);
   color: white;
-  padding: 1rem 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  padding: 0;
+}
+footer section {
+  background: rgba(51, 58, 59, 0.8);
+  margin-top: 10%;
+  padding: 1rem;
 }
 footer h2 {
   color: var(--main-pink);
@@ -261,7 +278,8 @@ footer li:hover {
   background: var(--main-tan);
 }
 footer i {
-  width: 4rem;
+  width: 20%;
+  text-align: center;
 }
 footer a {
   display: flex;

@@ -13,26 +13,18 @@ document.addEventListener("scroll", function() {
 setInterval(function() {
   if (scrolling) {
     scrolling = false;
-    changeColor();
-    setTab();
+
+    setNavColors();
   }
 }, 50);
 
-function changeColor() {
-  if (document.scrollingElement.scrollTop > window.innerHeight) {
-    document.documentElement.style.setProperty("--nav-background", gold);
-    document.documentElement.style.setProperty("--nav-hover", charcoal);
-  } else {
-    document.documentElement.style.setProperty("--nav-background", charcoal);
-    document.documentElement.style.setProperty("--nav-hover", gold);
-  }
-}
-
-function setTab() {
+function setNavColors() {
   if (document.scrollingElement.scrollTop < window.innerHeight) {
     document.getElementById("contact").style.backgroundColor = "";
     document.getElementById("works").style.backgroundColor = "";
     document.getElementById("about").style.backgroundColor = gold;
+    document.documentElement.style.setProperty("--nav-background", charcoal);
+    document.documentElement.style.setProperty("--nav-hover", gold);
   } else if (
     document.scrollingElement.scrollTop > window.innerHeight &&
     document.scrollingElement.scrollTop < window.innerHeight * 2 - 30
@@ -40,10 +32,14 @@ function setTab() {
     document.getElementById("about").style.backgroundColor = "";
     document.getElementById("contact").style.backgroundColor = "";
     document.getElementById("works").style.backgroundColor = charcoal;
+    document.documentElement.style.setProperty("--nav-background", gold);
+    document.documentElement.style.setProperty("--nav-hover", charcoal);
   } else {
     document.getElementById("about").style.backgroundColor = "";
     document.getElementById("works").style.backgroundColor = "";
-    document.getElementById("contact").style.backgroundColor = charcoal;
+    document.getElementById("contact").style.backgroundColor = gold;
+    document.documentElement.style.setProperty("--nav-background", charcoal);
+    document.documentElement.style.setProperty("--nav-hover", gold);
   }
 }
 
