@@ -1,17 +1,26 @@
 html {
   scroll-behavior: smooth;
   padding: 0;
-
-  background: url("https://source.unsplash.com/t922kt5UsU4/800x600") no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
 }
+/* Background fade in */
 
 /* -------------------------------------- */
 /* -------- CSS GLOBAL VARIABLES ---------*/
 /* -------------------------------------- */
+body {
+  background: #af7927 url("https://source.unsplash.com/t922kt5UsU4/800x600") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
+  opacity: 1;
+  transition: 1s opacity;
+}
+body.fade-out {
+  opacity: 0;
+  transition: none;
+}
 
 :root {
   --main-charcoal: #333a3b;

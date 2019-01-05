@@ -23,6 +23,12 @@ setInterval(function() {
   }
 }, 50);
 
+// Loading fade out
+
+window.onload = function() {
+  document.body.classList.remove("fade-out");
+};
+
 // Dynamically adjusts Nav styling to suit current panel
 function setNavColors() {
   let currentPosition = document.scrollingElement.scrollTop;
