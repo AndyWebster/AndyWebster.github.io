@@ -6,12 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" href="./style.css" />
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" />
-    <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
-      integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
-      crossorigin="anonymous"
-    />
+    <link rel="stylesheet" href="./fontawsome/css/all.css" />
     <title>Portfolio</title>
   </head>
   <body>
@@ -39,12 +34,13 @@
               <a href="https://codepen.io/awebster/pen/QzqNRb" target="_blank">
                 <img
                   src="https://s3-us-west-2.amazonaws.com/i.cdpn.io/1720503.QzqNRb.small.97c3c078-e2d2-4525-a823-0ce6f446567c.png"
+                  alt="Technical documentation page thumbnail"
                 />
               </a>
               <p class="img-txt">See the code in action</p>
             </div>
 
-            <div class="tile-caption" onclick="openPopup('tile-desc-1')">
+            <div class="tile-caption" onclick="expandPanel('tile-desc-1')">
               <h3>Technical documentation page</h3>
               <p id="tile-desc-1" class="tile-description">
                 A responsive page similar to what you might find on a wiki or software documentation page.
@@ -60,11 +56,12 @@
               <a href="https://codepen.io/awebster/pen/rozdQZ" target="_blank">
                 <img
                   src="https://s3-us-west-2.amazonaws.com/i.cdpn.io/1720503.rozdQZ.small.1a149d6e-3175-426a-a2b3-a6f98cc035fd.png"
+                  alt="Product landing page thumbnail"
                 />
               </a>
               <p class="img-txt">See the code in action</p>
             </div>
-            <div class="tile-caption" onclick="openPopup('tile-desc-2')">
+            <div class="tile-caption" onclick="expandPanel('tile-desc-2')">
               <h3>Product landing page</h3>
               <p id="tile-desc-2" class="tile-description">
                 A simple product page with an email signup form and an embeded video. <br /><br />This page uses cards
@@ -81,12 +78,13 @@
               <a href="https://codepen.io/awebster/pen/bORJZO" target="_blank">
                 <img
                   src="https://s3-us-west-2.amazonaws.com/i.cdpn.io/1720503.bORJZO.small.0c4d6e5c-86a4-4def-9f97-ed09361cc713.png"
+                  alt="Survey form website thumbnail"
                 />
               </a>
               <p class="img-txt">See the code in action</p>
             </div>
 
-            <div class="tile-caption" onclick="openPopup('tile-desc-3')">
+            <div class="tile-caption" onclick="expandPanel('tile-desc-3')">
               <h3>Survey form</h3>
               <p id="tile-desc-3" class="tile-description">
                 A basic survey form with a clear layout designed to be accessible and easy to use.
@@ -102,12 +100,13 @@
               <a href="https://codepen.io/awebster/pen/bOYYEP" target="_blank">
                 <img
                   src="https://s3-us-west-2.amazonaws.com/i.cdpn.io/1720503.bOYYEP.small.807c2d20-faf2-402d-aa89-c246e8630648.png"
+                  alt="photogrParallax experiment website thumbnail"
                 />
               </a>
               <p class="img-txt">See the code in action</p>
             </div>
 
-            <div class="tile-caption" onclick="openPopup('tile-desc-4')">
+            <div class="tile-caption" onclick="expandPanel('tile-desc-4')">
               <h3>Parallax experiment</h3>
               <p id="tile-desc-4" class="tile-description">
                 An experiment into the use of knockout text over a parallax scrolling background. <br /><br />The
@@ -120,10 +119,10 @@
         </div>
 
         <div>
-          <article class="project-tile tile-5" onclick="openPopup('tile-desc-5')">
+          <article class="project-tile tile-5" onclick="expandPanel('tile-desc-5')">
             <div class="img-container">
               <a href="http://morple-photography.firebaseapp.com" target="_blank">
-                <img src="./assets/photography.png" />
+                <img src="./assets/photography.jpg" alt="photography website thumbnail" />
               </a>
               <p class="img-txt">See the code in action</p>
             </div>
@@ -133,6 +132,27 @@
                 A minimalist and stylish portfolio page typical of what a photographer or digital designer might use.
                 <br /><br />The landing page employs embeded video to catch the users attention.<br /><br />
                 Mobile-first navigation buttons are employed to scroll down the page.
+              </p>
+              <button class="btn expand-btn">Read more</button>
+            </div>
+          </article>
+        </div>
+
+        <div>
+          <article class="project-tile tile-6" onclick="expandPanel('tile-desc-6')">
+            <div class="img-container">
+              <a href="http://job-board.ajwebster.co.uk" target="_blank">
+                <img src="./assets/job_board.jpg" alt="Job boardtography website thumbnail" />
+              </a>
+              <p class="img-txt">See the code in action</p>
+            </div>
+            <div class="tile-caption">
+              <h3>Job board</h3>
+              <p id="tile-desc-6" class="tile-description">
+                A full stack job board web app created using the Angular framework and styled with Google Angular
+                Material library. <br /><br />The backend is set up using a Node rest api and connects to a MongoDB
+                database.<br /><br />The app features user login and full CRUD functionality<br /><br />
+                The page employs Angular animations and Angular router to make a comact and intuitive user interface.
               </p>
               <button class="btn expand-btn">Read more</button>
             </div>

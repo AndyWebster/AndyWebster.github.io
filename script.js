@@ -1,15 +1,20 @@
-const charcoal = "#333a3b";
-const tan = "#665745";
-const pink = "#b29189";
-const gold = "#af7927";
-const brown = "#663204";
-var scrolling = null;
+//  Access CSS root variables (required for nav transitions)
+
+const style = getComputedStyle(document.body);
+const charcoal = style.getPropertyValue("--main-charcoal");
+const tan = style.getPropertyValue("--main-tan");
+const pink = style.getPropertyValue("--main-pink");
+const gold = style.getPropertyValue("--main-gold");
+const brown = style.getPropertyValue("--main-brown");
+
 document.getElementById("about").style.backgroundColor = gold;
 
 document.addEventListener("scroll", function() {
   scrolling = true;
 });
 
+// Carry out nav update functions on interval when scrolling
+var scrolling = null;
 setInterval(function() {
   if (scrolling) {
     scrolling = false;
@@ -18,32 +23,45 @@ setInterval(function() {
   }
 }, 50);
 
+// Dynamically adjusts Nav styling to suit current panel
 function setNavColors() {
-  if (document.scrollingElement.scrollTop < window.innerHeight) {
-    document.getElementById("contact").style.backgroundColor = "";
-    document.getElementById("works").style.backgroundColor = "";
-    document.getElementById("about").style.backgroundColor = gold;
+  let currentPosition = document.scrollingElement.scrollTop;
+  let footerYPos = document.getElementById("footer").offsetTop;
+  let buffer = 50;
+
+  let aboutStyle = document.getElementById("about").style;
+  let worksStyle = document.getElementById("works").style;
+  let contactStyle = document.getElementById("contact").style;
+
+  if (currentPosition < window.innerHeight) {
+    // SECTION 1
+
+    // SETS ACTIVE NAVBAR TAB COLOR, CLEARS INACTIVE TABS
+    aboutStyle.backgroundColor = gold;
+    worksStyle.backgroundColor = "";
+    contactStyle.backgroundColor = "";
+    // SET NAV BACKGROUND AND HOVER ROOT COLOR VARIABLES
     document.documentElement.style.setProperty("--nav-background", charcoal);
     document.documentElement.style.setProperty("--nav-hover", gold);
-  } else if (
-    document.scrollingElement.scrollTop > window.innerHeight &&
-    document.scrollingElement.scrollTop < window.innerHeight * 2 - 30
-  ) {
-    document.getElementById("about").style.backgroundColor = "";
-    document.getElementById("contact").style.backgroundColor = "";
-    document.getElementById("works").style.backgroundColor = charcoal;
+  } else if (currentPosition < footerYPos - buffer) {
+    // SECTION 2
+    aboutStyle.backgroundColor = "";
+    worksStyle.backgroundColor = charcoal;
+    contactStyle.backgroundColor = "";
     document.documentElement.style.setProperty("--nav-background", gold);
     document.documentElement.style.setProperty("--nav-hover", charcoal);
   } else {
-    document.getElementById("about").style.backgroundColor = "";
-    document.getElementById("works").style.backgroundColor = "";
-    document.getElementById("contact").style.backgroundColor = gold;
+    // SECTION 3
+    aboutStyle.backgroundColor = "";
+    worksStyle.backgroundColor = "";
+    contactStyle.backgroundColor = gold;
     document.documentElement.style.setProperty("--nav-background", charcoal);
     document.documentElement.style.setProperty("--nav-hover", gold);
   }
 }
 
-function openPopup(id) {
+// EXPANSION PANEL FOR PROJECT TILES
+function expandPanel(id) {
   let popup = document.getElementById(id);
   if (popup.style.opacity == 1 && popup.style.maxHeight == "200px") {
     popup.style.maxHeight = 0;
