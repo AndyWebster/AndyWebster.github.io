@@ -16,7 +16,7 @@
     <main id="main">
       <header id="main-header">
         <nav id="navbar">
-          <div id="about" class="nav-box pink-background"><a class="navlink" href="#welcome-section">About</a></div>
+          <div id="about" class="nav-box pink-background"><a class="navlink" href="#about-section">About</a></div>
           <div id="works" class="nav-box pink-background"><a class="navlink" href="#projects">Works</a></div>
           <div id="contact" class="nav-box pink-background"><a class="navlink" href="#footer">Contact</a></div>
         </nav>
@@ -31,6 +31,78 @@
       <!-- 3D cube showing 6 about descriptions -->
       <!-- Radio button setup to navigate cube -->
       <!-- Overview, Competancies, Interests, Experience, Education, Focus-->
+      <section id="about-section">
+        <div class="radio-group">
+          <input id="overview" type="radio" name="rotate-cube-side" value="front" checked />
+          <label for="overview"><i class="fas fa-user"></i> Overview</label>
+          <input id="interests" type="radio" name="rotate-cube-side" value="back" />
+          <label for="interests"><i class="fas fa-list-ul"></i> Skills</label>
+          <input id="education" type="radio" name="rotate-cube-side" value="top" />
+          <label for="education"><i class="fas fa-graduation-cap"></i> Education</label>
+
+          <!-- <input id="competancies" type="radio" name="rotate-cube-side" value="right" />
+              <label for="competancies">Interests</label>
+              <input id="experience" type="radio" name="rotate-cube-side" value="left" />
+              <label for="experience">Experience</label>
+              <input id="focus" type="radio" name="rotate-cube-side" value="bottom" />
+              <label for="focus">Focus</label> -->
+        </div>
+
+        <div class="scene">
+          <div class="cube">
+            <div class="cube__face cube__face--front">
+              <!-- <h3>Overview</h3> -->
+              <p>I’m a recent graduate currently looking for a foot in the door as a frontend developer in Glasgow.</p>
+              <p>I’m self taught and eager to learn new technologies.</p>
+              <p>I’m confident using HTML, CSS and Javascript to create attractive user interfaces</p>
+            </div>
+
+            <div class="cube__face cube__face--back">
+              <!-- <h3>Competencies</h3> -->
+              <section>
+                <h3>Primary skills:</h3>
+                <ul>
+                  <li>Javascript ES6</li>
+                  <li>Angular & Typescript</li>
+                  <li>HTML5 & CSS3</li>
+                </ul>
+              </section>
+              <section>
+                <h3>Secondary skills:</h3>
+                <ul>
+                  <li>Node & Express JS</li>
+                  <li>MongoDB</li>
+                  <li>SVG design (Inkscape)</li>
+                </ul>
+              </section>
+            </div>
+            <div class="cube__face cube__face--top">
+              <section>
+                <h3>Responsive Web Design</h3>
+                <p>freecodecamp.org</p>
+              </section>
+              <section>
+                <h3>Javascript Algorithms & Data structures</h3>
+                <p>freecodecamp.org</p>
+              </section>
+              <section>
+                <h3>Master of Civil Engineering</h3>
+                <p>University of Brighton</p>
+              </section>
+            </div>
+            <div class="cube__face cube__face--right">
+              <img src="./assets/flat-face.svg" alt="Cartoon portrait of author" />
+            </div>
+            <div class="cube__face cube__face--left">
+              <img src="./assets/flat-face.svg" alt="Cartoon portrait of author" />
+            </div>
+            <div class="cube__face cube__face--bottom">
+              <img src="./assets/flat-face.svg" alt="Cartoon portrait of author" />
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section id="projects">
         <header class="grid-header"><h2>Check out some of my recent works...</h2></header>
 
