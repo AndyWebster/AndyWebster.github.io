@@ -27,7 +27,10 @@ body.fade-out {
   --main-pink: #b29189;
   --main-gold: #af7927;
   --main-brown: #663204;
+  --main-teal: rgba(2, 66, 69, 0.7);
   --main-font: "Roboto", sans-serif;
+  --main-blue: rgba(0, 71, 207, 0.5);
+  --main-yellow: rgba(233, 172, 23, 0.7);
   --nav-hover: var(--main-tan);
   --nav-background: var(--main-charcoal);
   --nav-active-tab: var(--main-gold);
@@ -201,9 +204,9 @@ nav div:hover {
   justify-content: center;
 }
 
-label {
+#about-section label {
   color: white;
-  background: var(--main-gold);
+  background: var(--main-teal);
   width: 100%;
 
   transition: 0.5s;
@@ -227,24 +230,25 @@ label {
     align-items: center;
     height: 40vh;
   }
-  label {
+  #about-section label {
     height: 100%;
     width: 10rem;
   }
 }
 
-label i {
+#about-section label i {
   margin-right: 0.5rem;
 }
-label:hover {
-  background: var(--main-tan);
+#about-section label:hover {
+  background: var(--main-blue);
 }
 
 input[type="radio"] {
   display: none;
 }
-input[type="radio"]:checked + label {
-  background: var(--main-brown);
+#about-section input[type="radio"]:checked + label {
+  color: black;
+  background: var(--main-yellow);
 }
 
 /* CUBE LOGIC */
@@ -302,25 +306,25 @@ input[type="radio"]:checked + label {
 }
 
 .cube__face--front {
-  background: var(--main-brown);
+  background: var(--main-teal);
 }
 .cube__face--top {
-  background: var(--main-brown);
+  background: var(--main-teal);
 }
 .cube__face--back {
-  background: var(--main-brown);
+  background: var(--main-teal);
 }
 
 .cube__face--right {
-  background: var(--main-charcoal);
+  background: var(--main-yellow);
 }
 
 .cube__face--left {
-  background: var(--main-charcoal);
+  background: var(--main-yellow);
 }
 
 .cube__face--bottom {
-  background: var(--main-charcoal);
+  background: var(--main-blue);
 }
 
 .cube__face--front {
@@ -433,25 +437,23 @@ a:hover + .img-txt,
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   border: none;
   transition: all 0.3s;
-}
 
+  align-self: center;
+  color: white;
+  border-radius: 1rem;
+  width: 8rem;
+  margin: 0 0 1rem 0;
+}
+.expand-btn {
+  background-color: var(--main-charcoal);
+}
 .btn:focus {
   outline: none;
 }
-.expand-btn:hover {
+.btn:hover {
   width: 9rem;
 
   box-shadow: 0 16px 48px 0 rgba(0, 0, 0, 0.2);
-}
-.expand-btn {
-  align-self: center;
-  background-color: var(--main-charcoal);
-  color: white;
-  border-radius: 1rem;
-
-  width: 8rem;
-
-  margin: 0 0 1rem 0;
 }
 
 /* ------------- POPUP -------------- */
@@ -482,7 +484,7 @@ footer section {
   padding: 1rem;
 }
 footer h2 {
-  color: var(--main-pink);
+  color: white;
 }
 footer h3 {
   font-size: 1.2rem;
@@ -491,16 +493,31 @@ footer h3 {
 }
 footer ul {
   list-style: none;
+}
+
+footer ul,
+footer form {
   border: var(--main-pink) solid;
   border-width: 3px;
   padding-left: 0;
   margin: 0;
 }
 footer a {
-  color: var(--main-pink);
+  color: white;
   text-decoration: none;
 }
-
+footer form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+footer form p {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: start;
+}
 footer li {
   padding: 0.4rem;
 }
@@ -515,4 +532,7 @@ footer a {
   display: flex;
   flex-direction: row;
   justify-content: start;
+}
+footer button {
+  background-color: var(--main-yellow);
 }
