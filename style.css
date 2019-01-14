@@ -7,7 +7,7 @@ html {
 /* -------- CSS GLOBAL VARIABLES ---------*/
 /* -------------------------------------- */
 body {
-  background: #af7927 url("https://source.unsplash.com/t922kt5UsU4/800x600") no-repeat center center fixed;
+  background: #af7927 url("./assets/main-background.jpg") no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -471,18 +471,15 @@ a:hover + .img-txt,
 /* -------------- FOOTER -----------------*/
 /* -------------------------------------- */
 footer {
-  height: 100vh;
   color: white;
   display: flex;
   flex-direction: column;
   justify-content: start;
   padding: 0;
-}
-footer section {
   background: rgba(51, 58, 59, 0.8);
-  margin-top: 10%;
   padding: 1rem;
 }
+
 footer h2 {
   color: white;
 }
@@ -532,6 +529,14 @@ footer a {
   display: flex;
   flex-direction: row;
   justify-content: start;
+}
+#name,
+#email,
+#message {
+  width: 300px;
+}
+#message {
+  height: 100px;
 }
 footer button {
   background-color: var(--main-yellow);
