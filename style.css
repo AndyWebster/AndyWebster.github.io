@@ -147,8 +147,8 @@ nav div:hover {
 
 :root {
   --cube-width: 70vw;
-  --cube-translate-z: calc(var(--cube-width) * -0.25);
-  --cube-translate-y: calc(var(--cube-width) * 0.5);
+  --cube-translate-z: calc(70vw * -0.25);
+  --cube-translate-y: calc(70vw * 0.5);
 }
 
 #about-section {
@@ -164,6 +164,8 @@ nav div:hover {
 @media (min-width: 600px) {
   :root {
     --cube-width: 50vw;
+    --cube-translate-z: calc(50vw * -0.25);
+    --cube-translate-y: calc(50vw * 0.5);
   }
 
   #about-section {
@@ -173,6 +175,8 @@ nav div:hover {
 @media (min-width: 900px) {
   :root {
     --cube-width: 400px;
+    --cube-translate-z: calc(400px * -0.25);
+    --cube-translate-y: calc(400px * 0.5);
   }
 }
 /* CUBE FONTS */
